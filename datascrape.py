@@ -28,7 +28,9 @@ for row in rows[1:]:
     teams.append(team)
 
 # Save the data to a file
-with open('sports_teams.csv', 'w') as f:
+with open('data/city_teams.csv', 'w') as f:
     for team in teams:
         f.write(f"{team['City']}, {team['MLB']}, {team['NFL']}, {team['NBA']}, {team['NHL']}\n")
 
+# Create list of MLB teams
+mlb_teams = [team['MLB'] for team in teams if team['MLB']]
